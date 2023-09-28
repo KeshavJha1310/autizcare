@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import "./Welcome.css";
+import "./welcome.css";
 const Welcome = () => {
   const onRectangleButtonClick = useCallback(() => {
     // Please sync "Desktop - 2" to the project

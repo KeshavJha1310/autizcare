@@ -2,6 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alatsi:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
 
 body {
   margin: 0;
@@ -23,15 +27,42 @@ code {
   --font-alatsi: Alatsi;
   --font-bebas-neue: "Bebas Neue";
   --font-inter: Inter;
+    /* fonts */
+    --font-inter: Inter;
+    --font-alata: Alata;
+  
 
   /* font sizes */
   --font-size-25xl: 44px;
   --font-size-51xl: 70px;
+  --font-size-29xl: 48px;
+  --font-size-13xl: 32px;
+  --font-size-21xl: 40px;
+  --font-size-25xl: 44px;
+  --font-size-5xl: 24px;
+  --font-size-xl: 20px;
+  --font-size-sm: 14px;
+
+    /* font sizes */
+    --font-size-13xl: 32px;
+
 
   /* Colors */
   --color-gray-100: #fafafa;
   --color-black: #000;
   --color-powderblue: #8ac5c1;
+  --color-white: #fff;
+  --color-gainsboro: rgba(217, 217, 217, 0);
+  --color-lavender: #e6e5ff;
+  --color-gray: #16162d;
+  --color-darkgray-100: #b3b3b3;
+  --color-darkgray-200: #999;
+
+    /* Colors */
+    --color-white: #fff;
+    --color-gainsboro: rgba(217,217,217,0);
+    --gap-3xs:10px;
+
 
   /* Border radiuses */
   --br-6xl: 25px;
