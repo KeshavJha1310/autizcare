@@ -11,7 +11,7 @@ function App() {
       <Welcome/>
       </AuthUserProvider>
     </div>
-  );
+  ); 
 }
 
 export default App;
