@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import Welcome from './Components/Welcome';
+import SignUp from './Components/SignUp';
 import './App.css';
 import {AuthUserProvider} from "./Components/firebase/auth";
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <AuthUserProvider>
-      <Welcome/>
+      <SignUp/>
       </AuthUserProvider>
     </div>
   ); 
