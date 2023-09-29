@@ -1,5 +1,6 @@
 import React from "react";
 import * as Components from './ComponentForSignUp';
+import { FcGoogle } from "react-icons/fc";
 
 function SignUp() {
     const [signIn, toggle] = React.useState(true);
@@ -7,7 +8,15 @@ function SignUp() {
          <Components.Container>
              <Components.SignUpContainer signinIn={signIn}>
                  <Components.Form>
-                     <Components.Title>Create Account</Components.Title>
+                  
+                     <Components.Title>Create Account</Components.Title>  
+                      <Components.GoogleButton>
+                    <FcGoogle size={22} />
+                    <span className="font-medium text-black group-hover:text-white">
+                        Login with Google
+                    </span>
+                    </Components.GoogleButton>
+                    <span>or</span>
                      <Components.Input type='text' placeholder='Name' />
                      <Components.Input type='email' placeholder='Email' />
                      <Components.Input type='password' placeholder='Password' />
@@ -18,6 +27,13 @@ function SignUp() {
              <Components.SignInContainer signinIn={signIn}>
                   <Components.Form>
                       <Components.Title>Sign In</Components.Title>
+                      <Components.GoogleButton>
+                    <FcGoogle size={22} />
+                    <span className="font-medium text-black group-hover:text-white">
+                        Login with Google
+                    </span>
+                    </Components.GoogleButton>
+                    <span>or</span>
                       <Components.Input type='email' placeholder='Email' />
                       <Components.Input type='password' placeholder='Password' />
                       <Components.Anchor href='#'>Forgot your password?</Components.Anchor>

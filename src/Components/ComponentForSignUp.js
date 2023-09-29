@@ -1,16 +1,47 @@
-
 import styled from 'styled-components';
+import backgroundImage from '../images/welcomeBg.jpg'; 
 
 export const Container = styled.div`
 background-color: #fff;
 border-radius: 10px;
 box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-position: relative;
-overflow: hidden;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 width: 678px;
 max-width: 100%;
 min-height: 400px;
 `;
+
+
+export const GoogleButton = styled.div`
+  background-color: rgba(0, 0, 0, 0.05);
+  color: black;
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 1rem;
+  border-radius: 9999px; /* Rounded full in Tailwind */
+  transition: transform 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  .group:hover & {
+    color: black;
+  }
+`;
+
 
 export const SignUpContainer = styled.div`
  position: absolute;
@@ -68,9 +99,9 @@ width: 100%;
 
 export const Button = styled.button`
    border-radius: 20px;
-   border: 1px solid #ff4b2b;
-   background-color: #ff4b2b;
-   color: #ffffff;
+   border: 1px solid skyblue;
+   background-color: skyblue;
+   color: black;
    font-size: 12px;
    font-weight: bold;
    padding: 12px 45px;
@@ -86,16 +117,21 @@ export const Button = styled.button`
 `;
 export const GhostButton = styled(Button)`
 background-color: transparent;
-border-color: #ffffff;
+border-color: black;
 `;
 
 export const Anchor = styled.a`
+
 color: #333;
 font-size: 14px;
 text-decoration: none;
 margin: 15px 0;
 `;
 export const OverlayContainer = styled.div`
+background-image: url(${backgroundImage});
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
 position: absolute;
 top: 0;
 left: 50%;
@@ -109,13 +145,17 @@ ${props =>
 `;
 
 export const Overlay = styled.div`
-background: #ff416c;
-background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
-background: linear-gradient(to right, #ff4b2b, #ff416c);
+background-image: url(${backgroundImage});
 background-repeat: no-repeat;
-background-size: cover;
-background-position: 0 0;
-color: #ffffff;
+background-size: fir;
+background-position: center;
+// background: #ff416c;
+//background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+// background: linear-gradient(to right, #ff4b2b, #ff416c);
+// background-repeat: no-repeat;
+// background-size: cover;
+// background-position: 0 0;
+color: black;
 position: relative;
 left: -100%;
 height: 100%;
@@ -131,7 +171,7 @@ export const OverlayPanel = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: -1 40px;
     text-align: center;
     top: 0;
     height: 100%;
