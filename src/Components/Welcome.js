@@ -14,7 +14,7 @@ const Welcome = () => {
   }, []);
 
   return (
-    <div className="desktop-1">
+    <div className="signUp">
       <div className="frame">
         <div className="frame1">
           <canvas className="frame-child" />
