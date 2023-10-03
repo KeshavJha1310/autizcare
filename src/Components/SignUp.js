@@ -1,6 +1,16 @@
 import React from "react";
 import * as Components from './ComponentForSignUp';
 import { FcGoogle } from "react-icons/fc";
+import {auth} from "./firebase/firebase";
+
+import {
+    signInWithEmailAndPasswords,
+    GoogleAuthProvider,
+    signInWithPopup
+} from "./firebase/auth";
+
+import { useAuth } from "./firebase/auth";
+import {useRouter} from "next/router";
 
 function SignUp() {
     const [signIn, toggle] = React.useState(true);
