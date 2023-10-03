@@ -6,18 +6,10 @@ import { AuthUserProvider } from "./Components/firebase/auth";
 
 function App() {
 
-  const containerStyle ={
-    // backgroundImage : `url(${backloginImg})`,
-    backgroundColor : '#fafafa',
-    display : 'flex',
-    justifyContent : 'center',
-    alignItems : 'center',
-  }
-
-
+  
   return (
     <>
-    <div style={containerStyle} className="App">
+    <div  className="App">
         <AuthUserProvider> 
    <SignUp/> 
         </AuthUserProvider>

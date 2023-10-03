@@ -1,42 +1,95 @@
-import React from "react";
+import React , {useEffect, useState}from "react";
 import * as Components from './ComponentForSignUp';
 import { FcGoogle } from "react-icons/fc";
 import {auth} from "./firebase/firebase";
 
 import {
-    signInWithEmailAndPasswords,
+
+    signInWithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup
-} from "./firebase/auth";
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+} 
+from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "./firebase/auth";
+// import Loader from "./Loader";
+
+const provider = new GoogleAuthProvider()
 
 function SignUp() {
     const [signIn, toggle] = React.useState(true);
-     return(
+    const [email,setEmail] = useState(null);
+    const [password,setPassword] = useState(null);
+    const {authUser , isLoading} = useAuth();
+
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+        if(!isLoading && authUser){
+            navigate('/dashboard')
+        }
+    },[authUser,isLoading,navigate])
+    
+    const loginHandler = async () => {
+
+        if(!email || !password) return;
+
+        try{
+            const user = await signInWithEmailAndPassword(auth,email,password);
+            console.log(user)
+        }
+        catch(error){
+
+            console.log("error occured in SignIn :- " , error)
+        }
+    }
+
+    const signinwithgoogle = async () => {
+        try {
+            const user = await signInWithPopup(auth , provider) 
+            console.log(user)
+        } catch (error) {
+            console.log("error occured :- " ,error)
+        }
+    };
+
+     return (
+        
          <Components.Container>
              <Components.SignUpContainer signinIn={signIn}>
                  <Components.Form>
                   
                      <Components.Title>Create Account</Components.Title>  
-                      <Components.GoogleButton>
+                      <Components.GoogleButton onClick={signinwithgoogle}>
                     <FcGoogle size={22} />
                     <span className="font-medium text-black group-hover:text-white">
                         Login with Google
                     </span>
                     </Components.GoogleButton>
                     <span>or</span>
-                     <Components.Input type='text' placeholder='Name' />
-                     <Components.Input type='email' placeholder='Email' />
-                     <Components.Input type='password' placeholder='Password' />
-                     <Components.Button>Sign Up</Components.Button>
+                     <Components.Input
+                      type='text' 
+                      placeholder='Name' 
+                      onChange={(e)=>setEmail(e.target.value)}
+                      required 
+                       />
+                     <Components.Input
+                      type='email'
+                       placeholder='Email' />
+                     <Components.Input 
+                     type='password' 
+                     onChange={(e)=>setPassword(e.target.value)}
+                     required
+                     placeholder='Password' />
+                     <Components.Button onClick={loginHandler}>Sign Up</Components.Button>
                  </Components.Form>
              </Components.SignUpContainer>
 
              <Components.SignInContainer signinIn={signIn}>
                   <Components.Form>
                       <Components.Title>Sign In</Components.Title>
-                      <Components.GoogleButton>
+                      <Components.GoogleButton onClick={signinwithgoogle}>
                     <FcGoogle size={22} />
                     <span className="font-medium text-black group-hover:text-white">
                         Login with Google
@@ -46,7 +99,7 @@ function SignUp() {
                       <Components.Input type='email' placeholder='Email' />
                       <Components.Input type='password' placeholder='Password' />
                       <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                      <Components.Button>Sign In</Components.Button>
+                      <Components.Button onClick={loginHandler}>Sign In</Components.Button>
                   </Components.Form>
              </Components.SignInContainer>
 
