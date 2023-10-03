@@ -1,5 +1,13 @@
 import styled from 'styled-components';
-import backgroundImage from '../images/welcomeBg.jpg'; 
+import backgroundImage from '../images/welcome.jpeg'; 
+// import backloginImg from '../images/loginBg.jpeg';
+
+// export const App = styled.div`
+// background-image: url(${backloginImg});
+// background-repeat: no-repeat;
+// background-size: cover;
+// background-position: center;
+// `
 
 export const Container = styled.div`
 background-color: #fff;
@@ -9,9 +17,9 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-width: 780px;
+width: 678px;
 max-width: 100%;
-min-height: 480px;
+min-height: 400px;
 `;
 
 
@@ -99,8 +107,8 @@ width: 100%;
 
 export const Button = styled.button`
    border-radius: 20px;
-   border: 1px solid skyblue;
-   background-color: skyblue;
+   border: 1px solid grey;
+   background-color: 'light';
    color: black;
    font-size: 12px;
    font-weight: bold;

@@ -57,7 +57,7 @@ function SignUp() {
                      <Components.RightOverlayPanel signinIn={signIn}>
                        <Components.Title>Hello, Users!</Components.Title>
                        <Components.Paragraph>
-                       Not a member yet? Enter Your details and start your journey with AutiCare.
+                        Not a member yet? Enter your details and start your journey with AutizCare
                        </Components.Paragraph>
                            <Components.GhostButton onClick={() => toggle(false)}>
                                Register
