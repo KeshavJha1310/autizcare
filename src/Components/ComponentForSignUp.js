@@ -9,9 +9,9 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-width: 678px;
+width: 780px;
 max-width: 100%;
-min-height: 400px;
+min-height: 480px;
 `;
 
 
@@ -128,10 +128,10 @@ text-decoration: none;
 margin: 15px 0;
 `;
 export const OverlayContainer = styled.div`
-background-image: url(${backgroundImage});
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
+background-image:url(${backgroundImage});
+background-repeat:no-repeat;
+background-size:cover;
+background-position:center;
 position: absolute;
 top: 0;
 left: 50%;
@@ -147,7 +147,7 @@ ${props =>
 export const Overlay = styled.div`
 background-image: url(${backgroundImage});
 background-repeat: no-repeat;
-background-size: fir;
+background-size: cover;
 background-position: center;
 // background: #ff416c;
 //background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
