@@ -9,8 +9,7 @@ import {
     signInWithPopup
 } from "./firebase/auth";
 
-import { useAuth } from "./firebase/auth";
-import {useRouter} from "next/router";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function SignUp() {
     const [signIn, toggle] = React.useState(true);
