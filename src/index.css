@@ -10,6 +10,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alatsi:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alata:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@700&display=swap");
 
 body {
   margin: 0;
@@ -92,4 +94,38 @@ code {
   --br-xl: 20px;
   --br-31xl: 50px;
   --br-mini: 15px;
+    /* fonts */
+    --font-inria-sans: "Inria Sans";
+
+    /* font sizes */
+    --font-size-5xl: 24px;
+  
+    /* Colors */
+    --color-gray-100: rgba(0, 0, 0, 0.13);
+    --color-gray-200: rgba(0, 0, 0, 0.4);
+    --color-dimgray-100: #676363;
+    --color-dimgray-200: rgba(79, 74, 74, 0.81);
+    --color-dimgray-300: rgba(79, 74, 74, 0.73);
+    --color-dimgray-400: rgba(84, 77, 77, 0.81);
+    --color-powderblue-100: #c6e0dd;
+    --color-powderblue-200: #8ac5c1;
+    --color-black: #000;
+    --color-white: #fff;
+
+    /* fonts */
+  --font-inria-sans: "Inria Sans";
+
+  /* font sizes */
+  --font-size-5xl: 24px;
+
+  /* Colors */
+  --color-gray-100: rgba(0, 0, 0, 0.13);
+  --color-dimgray-100: #676363;
+  --color-dimgray-200: rgba(79, 74, 74, 0.81);
+  --color-dimgray-300: rgba(79, 74, 74, 0.73);
+  --color-dimgray-400: rgba(84, 77, 77, 0.81);
+  --color-powderblue-100: #c6e0dd;
+  --color-powderblue-200: #8ac5c1;
+  --color-black: #000;
+  --color-white: #fff;
 }
