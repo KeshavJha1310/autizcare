@@ -31,13 +31,13 @@ const Welcome = () => {
             <div className="frame4" onClick={onFrameContainer1Click}>
               <button className="frame-child" />
               <div className="patient" onClick={onPatientTextClick}>
-                Patient
+                <a href="/c/auth">Patient</a>
               </div>
             </div>
             <div className="frame4" onClick={onFrameContainer2Click}>
               <button className="frame-child" />
               <div className="patient" onClick={onTherapistTextClick}>
-                Therapist
+              <a href="/t/auth" style={{}}>Therapist</a>
               </div>
             </div>
           </div>

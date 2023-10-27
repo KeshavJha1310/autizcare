@@ -39,18 +39,18 @@ function SignUp() {
         //     console.log('User not authenticated');
         // }
 // Check if the token exists in local storage
-const token = localStorage.getItem("authToken");
+const Doctoken = localStorage.getItem("DocauthToken");
 
 // Check if the user exists in session
-const sessionUser = JSON.parse(sessionStorage.getItem("authUser"));
+const DocsessionUser = JSON.parse(sessionStorage.getItem("DocauthUser"));
 
-if (token && sessionUser) {
+if (!Doctoken && !DocsessionUser) {
   // If both token and user exist, navigate to "/"
   console.log("authUser:", authUser);
   console.log('User authenticated');
-  navigate("/c/dashboard");
+  navigate("/t/auth");
 }else{
-  navigate("/c/auth");
+    navigate("/t/dashboard");
 }
 },[authUser,navigate]);
     
@@ -62,16 +62,16 @@ if (token && sessionUser) {
             const user = await signInWithEmailAndPassword(auth,email,password);
              // Store the token in local storage
       const idToken = await user.getIdToken();
-      localStorage.setItem("authToken", idToken);
+      localStorage.setItem("DocauthToken", idToken);
 
       // Store the user in session
-      sessionStorage.setItem("authUser", JSON.stringify(user));
+      sessionStorage.setItem("DocauthUser", JSON.stringify(user));
             console.log(user)
-            navigate("/c/dashboard");
-          alert("Sucessfully sign-in!")
+            navigate("/t/dashboard");
+            alert("Successfully sign-in")
         }
         catch(error){
-          alert("Error during sign-in. Please try again.", error);
+            alert("Error during sign-in. Please try again.", error);
             console.log("error occured in SignIn :- " , error)
         }
     }
@@ -126,21 +126,22 @@ const signUpHandler = async () => {
       });
       // Store the token in local storage
       const idToken = await newUser.getIdToken();
-      localStorage.setItem("authToken", idToken);
+      localStorage.setItem("DocauthToken", idToken);
 
       // Store the user in session
-      sessionStorage.setItem("authUser", JSON.stringify(newUser));
+      sessionStorage.setItem("DocauthUser", JSON.stringify(newUser));
 
       setAuthUser({
         uid: newUser.uid,
         email: newUser.email,
         username,
       });
-      navigate("/userprofileform");
-      alert("Successfully account created!");
+      navigate("/therapistProfileform");
+      alert("Successfully account created!")
       console.log(username);
     } catch (error) {
-      alert("Error during sign-in. Please try again.", error);
+        alert("Error during sign-up. Please try again.", error);
+
       console.log("error in signUp", error);
     }
     console.log("exited from try catch...");
@@ -226,7 +227,7 @@ const signUpHandler = async () => {
                      </Components.LeftOverlayPanel>
 
                      <Components.RightOverlayPanel signinIn={signIn}>
-                       <Components.Title>Hello, Users!</Components.Title>
+                       <Components.Title>Hello, Therapist!</Components.Title>
                        <Components.Paragraph>
                         Not a member yet? Enter your details and start your journey with AutizCare
                        </Components.Paragraph>

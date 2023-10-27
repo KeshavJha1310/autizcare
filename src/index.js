@@ -7,11 +7,28 @@ import {
   
 } from "react-router-dom";
 import SignUp from './Components/SignUp'; //  SignUp component
-import Welcome from './Components/Welcome'
+import Welcome from './Components/Welcome';
+import DocSignUp from './Components/DocSignUp';
+import UserForm from './Components/UserForm';
+import TherapistForm from './Components/TherapistForm';
 const router = createBrowserRouter([
   {
-    path: "/auth",
+    path: "/c/auth",
     element:<SignUp/>,
+  },
+  {
+    path: "/t/auth",
+    element:<DocSignUp/>,
+  },
+  
+  {
+    path: "/therapistProfileform",
+    element:<TherapistForm/>,
+  },
+  
+  {
+    path: "/userprofileform",
+    element:<UserForm/>,
   },
   
   {
