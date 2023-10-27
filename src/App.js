@@ -8,10 +8,11 @@ function App() {
 
   
   return (
-    <>
+    <> 
     <div  className="App">
         <AuthUserProvider> 
-   <SignUp/> 
+        {/* <Component {...pageProps} /> */}
+        <SignUp/>
         </AuthUserProvider>
       </div>
     </>

@@ -16,10 +16,10 @@ const firebaseConfig = {
   storageBucket: "autizcare-2af7b.appspot.com",
   messagingSenderId: "537263069995",
   appId: "1:537263069995:web:c119f20001c769242c836e",
-  measurementId: "G-YVC1FW42WK"
+  measurementId: "G-YVC1FW42WK",
 };
 
-// Initialize Firebase
+// Initialize Firebase 
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 export const auth = getAuth(app);

@@ -6,6 +6,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alata:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alatsi:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata:wght@400&display=swap");
 
 body {
   margin: 0;
@@ -66,4 +70,26 @@ code {
 
   /* Border radiuses */
   --br-6xl: 25px;
+  /* fonts */
+  --font-alata: Alata;
+  --font-alatsi: Alatsi;
+  --font-bebas-neue: "Bebas Neue";
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-21xl: 40px;
+
+  /* Colors */
+  --color-gray: #fafafa;
+  --color-black: #000;
+  --color-lightseagreen: #2aa496;
+  --color-paleturquoise: #85d1c8;
+
+  /* Paddings */
+  --padding-247xl: 266px;
+
+  /* Border radiuses */
+  --br-xl: 20px;
+  --br-31xl: 50px;
+  --br-mini: 15px;
 }

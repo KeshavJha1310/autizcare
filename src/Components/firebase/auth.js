@@ -1,63 +1,74 @@
-import { useCallback,createContext , useContext , useState , useEffect } from "react";
-import {onAuthStateChanged , signOut as authSignOut} from "firebase/auth";
-import {auth} from "./firebase";
+import { createContext, useContext, useState, useEffect } from "react";
+import { onAuthStateChanged, signOut as authSignOut } from "firebase/auth";
+import { auth } from "./firebase";
 
-const AuthUserContex = createContext({
-    authUser : null,
-    isLoading : true
-}) 
+const AuthUserContext = createContext({
+  authUser: null,
+  isLoading: true,
+  setAuthUser: () => {},
+});
 
-export default function useFirebaseAuth(){
-    const [authUser , setAuthUser] = useState(null);
-    const [isLoading , setIsLoading] = useState(true);
+export default function useFirebaseAuth() {
+  const [authUser, setAuthUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-    const clear=() =>{
-        setAuthUser(null)
-        setIsLoading(false)
-    }
-    const authSateChanged = useCallback(async (user) => {
-        setIsLoading(true);
+  const clear = () => {
+    setAuthUser(null);
+    setIsLoading(false);
+    console.log("clearing the function");
+  };
 
-        if (!user) {
-            clear();
-            return;
-        }
+  useEffect(() => {
+    console.log('auth.js useEffect started');
+    const authStateChanged = (user) => {
+      setIsLoading(true);
 
+      if (!user) {
+        clear();
+        return;
+      }
+
+      try {
+        // Set the authenticated user details here
         setAuthUser({
-            uid: user.uid,
-            email: user.email,
-            username: user.display
+          uid: user.uid,
+          email: user.email,
+          username: user.displayName,
         });
-
+      } catch (error) {
+        console.error("Error setting user:", error);
+      } finally {
         setIsLoading(false);
-    }, []);
+      }
+    };
 
+    const unsubscribe = onAuthStateChanged(auth, authStateChanged);
+    return () => {
+      console.log('auth.js useEffect cleanup');
+      unsubscribe();
+    };
+  }, []);
 
-const signOut = () => {
-    authSignOut(auth).then(()=>clear());
-}
+  const signOut = () => {
+    authSignOut(auth).then(() => clear());
+  };
 
-useEffect(()=>{
-    
-    const unsubscribe = onAuthStateChanged(auth,authSateChanged)
-    return () => unsubscribe();
-},[authSateChanged]);
-
-return{
-    authUser ,
+  return {
+    authUser,
     isLoading,
     setAuthUser,
     signOut
+  };
 }
-};
-export const AuthUserProvider = ({children}) =>{
 
-const auth = useFirebaseAuth();
+export const AuthUserProvider = ({ children }) => {
+  const auth = useFirebaseAuth();
 
-return(
-    <AuthUserContex.Provider value={auth}>
-    {children}
-    </AuthUserContex.Provider>
-);
+  return (
+    <AuthUserContext.Provider value={auth}>
+      {children}
+    </AuthUserContext.Provider>
+  );
 };
-export const useAuth = () => useContext(AuthUserContex)
+
+export const useAuth = () => useContext(AuthUserContext);
