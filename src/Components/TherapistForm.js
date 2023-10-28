@@ -101,7 +101,7 @@ if(res){
     //     file: null
     // })
     alert("Your Profile Created");
-    navigate("/t/dashboard")
+   
 } } else{
 alert("Please fill the data");
 }
