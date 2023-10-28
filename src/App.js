@@ -2,6 +2,7 @@
 import SignUp from './Components/SignUp';
 import './App.css';
 import { AuthUserProvider } from "./Components/firebase/auth";
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import backloginImg from './images/loginBg.jpeg';
 
 function App() {

@@ -1,7 +1,15 @@
 import {  useState } from "react";
 import "./therapistForm.css";
+import {ref , uploadBytes} from "firebase/storage";
+import "firebase/database";
+import { storage } from "./firebase/firebase";
+import { useNavigate } from "react-router-dom";
+
 
 const TherapistForm = () => {
+    const navigate = useNavigate()
+
+    const [file, setFile] = useState(null);
     const [formData, setFormData] = useState({
         name: '',
         address: '',
@@ -9,6 +17,7 @@ const TherapistForm = () => {
         contact: '',
         age: '',
         gender: '',
+        specialization:'',
         qualification: '',
         affiliation: '',
         experience: '' ,
@@ -22,12 +31,88 @@ const TherapistForm = () => {
         });
       };
     
-      const handleFileUpload = (e) => {
-        // Logic to handle file upload
+      const submitData = async (event) => {
+        event.preventDefault();
+        const {
+            name,
+            address,
+            pincode,
+            age,
+            gender,
+            contact,
+            specialization,
+            qualification,
+            affiliation,
+            experience
+        } = formData;
+        if( name &&
+            address &&
+            pincode &&
+            age &&
+            gender &&
+            contact &&
+            specialization &&
+            qualification &&
+            affiliation &&
+            experience &&
+            file 
+            )
+            {
+        const res = fetch(
+            'https://autizcare-2af7b-default-rtdb.firebaseio.com/therapistData.json', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body:JSON.stringify({
+                name,
+            address,
+            pincode,
+            age,
+            gender,
+            contact,
+            specialization,
+            qualification,
+            affiliation,
+            experience,
+            })
+        }
+        );
+        const fileRef = ref(storage,`therapist/certificates/${file.name + "jkhdskhs" }`);
+        uploadBytes(fileRef,file).then(()=>{
+            console.log("file uploaded",file)
+        })
+if(res){
+    setFormData({
+        name: '',
+        address: '',
+        pincode: '',
+        diagnosis: '',
+        age: '',
+        gender: '',
+        contact: '',
+        specialization: '',
+        qualification: '',
+        affiliation: '',
+        experience: '',
+        file: null,
+    })
+    // setFile({
+    //     file: null
+    // })
+    alert("Your Profile Created");
+    navigate("/t/dashboard")
+} } else{
+alert("Please fill the data");
+}
+
+    }
+
+    const handleFileUpload = (e) => {
         const file = e.target.files[0];
-        // Handle the file as needed
-        console.log('Uploaded file:', file);
+        setFile(file);
       };
+    
     
       const handleSubmit = (e) => {
         e.preventDefault();
@@ -57,7 +142,7 @@ const TherapistForm = () => {
             </label>
             <br />
             <label>
-              contact:
+              Contact:
               <input type="text" name="contact" value={formData.diagnosis} onChange={handleInputChange} />
             </label>
             <br />
@@ -74,6 +159,11 @@ const TherapistForm = () => {
           </form>
         </div>
         <div className="input-container">
+          <label>
+          Specialization:
+            <textarea name="specialization" value={formData.specialization} onChange={handleInputChange} />
+          </label>
+          <br />
           <label>
           Qualification:
             <textarea name="qualification" value={formData.qualification} onChange={handleInputChange} />
@@ -94,7 +184,7 @@ const TherapistForm = () => {
             <input type="file" onChange={handleFileUpload} />
           </label>
           <br />
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={submitData}>Submit</button>
         </div>
       </div>
       );
