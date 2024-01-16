@@ -2,10 +2,13 @@
 
 ### `Firebase Project creation`
 
-*Login with your Google mail Id into Firebase  
-*Go to the `console` then Create a Project
+* Login with your Google mail Id into Firebase  
+* Go to the `console` then Create a Project
 
-![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/5619e499-1877-4eee-8733-304f1dd1b9e7)
+![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/5619e499-1877-4eee-8733-304f1dd1b9e7)  
+
+![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/49b56efc-c327-49bf-8817-e53a1b1d9084)
+
 
 
 
