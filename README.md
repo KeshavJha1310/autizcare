@@ -3,7 +3,7 @@
 ### `Firebase Project creation`
 
 Login with your Google mail Id into Firebase.
-Go to the ###`console` then Create a Project
+Go to the `console` then Create a Project
 
 
 
