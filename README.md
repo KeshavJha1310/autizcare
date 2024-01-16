@@ -11,7 +11,13 @@
 
 ![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/49b56efc-c327-49bf-8817-e53a1b1d9084)
 
+* Continue the Steps
 
+![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/ee6b0fae-065c-4b90-8573-e98fe8b8826d)
+
+* Now press `create project`
+
+![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/3cb3184e-06d9-43fb-9e6d-3d5bd8a350ad)
 
 
 ## Available Scripts
