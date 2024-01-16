@@ -11,7 +11,7 @@ import { getStorage } from "firebase/storage";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional.
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDdAmgtWVmDglKADeSDDhVq3_YqVa3fUzQ",
+  apiKey: "AIzaSyDdAmgtWVmDglKADeSDDhVq3_YqVa3fUzQ", 
   authDomain: "autizcare-2af7b.firebaseapp.com",
   projectId: "autizcare-2af7b",
   storageBucket: "autizcare-2af7b.appspot.com",
