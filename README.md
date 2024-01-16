@@ -27,6 +27,12 @@
 
 ![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/0427bc9f-4bc0-4f74-b8db-8253451d4843)
 
+* After creating the web app firebase will provide you some of the api keys etc. copy the code snippet with keys
+
+![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/3d99fffb-a448-4c23-b0a0-8fe8cc5daa93)
+
+* In ./src/Components/firebase/firebase.js paste the code snippet here
+
 ## Available Scripts
 
 In the project directory, you can run:
