@@ -1,7 +1,12 @@
 ## FireBase Configuration & SetUp
 
+### `Firebase Project creation`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Login with your Google mail Id into Firebase.
+Go to the ###`console` then Create a Project
+
+
+
 
 ## Available Scripts
 
