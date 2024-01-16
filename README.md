@@ -33,6 +33,8 @@
 
 * In ./src/Components/firebase/firebase.js paste the code snippet here
 
+* For database config and rules defination follow this ![Click](https://youtu.be/YPsftzOURLw?t=205)
+
 ## Available Scripts
 
 In the project directory, you can run:
