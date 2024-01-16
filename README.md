@@ -15,10 +15,17 @@
 
 ![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/ee6b0fae-065c-4b90-8573-e98fe8b8826d)
 
-* Now press `create project`
+* Now click on `create project`
 
 ![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/3cb3184e-06d9-43fb-9e6d-3d5bd8a350ad)
 
+* Select the Domain as `Web`
+
+![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/9b336afe-a08e-46d8-8f3c-4c34df2ae1e7)
+
+* Give Name to your Web app
+
+![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/0427bc9f-4bc0-4f74-b8db-8253451d4843)
 
 ## Available Scripts
 
