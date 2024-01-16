@@ -7,6 +7,8 @@
 
 ![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/5619e499-1877-4eee-8733-304f1dd1b9e7)  
 
+* Give a name to your project 
+
 ![image](https://github.com/KeshavJha1310/autizcare/assets/124581153/49b56efc-c327-49bf-8817-e53a1b1d9084)
 
 
