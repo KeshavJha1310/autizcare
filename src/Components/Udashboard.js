@@ -24,7 +24,7 @@ const bookhandle = () =>{
   background-image: url(${bg}); /* Add the path to your background image */
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   /* Additional background styles */
 }
